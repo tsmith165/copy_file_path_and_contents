@@ -9,7 +9,7 @@
   "categories": [
     "Other"
   ],
-  "main": "./src/extension.js",
+  "main": "src/extension.js",
   "contributes": {
     "commands": [
       {
@@ -38,5 +38,9 @@
   },
   "activationEvents": [
     "onCommand:extension.copyFilePathAndContent"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsmith165/copy_file_path_and_contents.git"
+  }
 }
