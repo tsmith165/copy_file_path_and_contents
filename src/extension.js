@@ -1,7 +1,7 @@
-import * as vscode from 'vscode';
-import * as path from 'path';
+const vscode = require('vscode');
+const path = require('path');
 
-export function activate(context) {
+function activate(context) {
     let disposable = vscode.commands.registerCommand('extension.copyFilePathAndContent', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return; // No open text editor
@@ -29,4 +29,9 @@ ${content}
     context.subscriptions.push(disposable);
 }
 
-export function deactivate() {}
+function deactivate() {}
+
+module.exports = {
+    activate,
+    deactivate
+};

@@ -2,7 +2,8 @@
   "name": "copyfilepathandcontent",
   "displayName": "CopyFilePathAndContent",
   "description": "Copy file path and content to clipboard",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "TorreySmith",
   "engines": {
     "vscode": "^1.82.0"
   },
