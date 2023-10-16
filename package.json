@@ -1,47 +1,57 @@
 {
-  "name": "copyfilepathandcontent",
-  "displayName": "CopyFilePathAndContent",
-  "description": "Copy file path and content to clipboard",
-  "version": "0.0.2",
-  "publisher": "TorreySmith",
-  "engines": {
-    "vscode": "^1.82.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "main": "src/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.copyFilePathAndContent",
-        "title": "Copy file path and content"
-      }
+    "name": "copyfilepathandcontent",
+    "displayName": "CopyFilePathAndContent",
+    "description": "Copy file path and content to clipboard",
+    "version": "0.0.3",
+    "publisher": "TorreySmith",
+    "engines": {
+        "vscode": "^1.82.0"
+    },
+    "categories": [
+        "Other"
     ],
-    "menus": {
-      "editor/title/context": [
-        {
-          "command": "extension.copyFilePathAndContent",
-          "group": "1_modification"
+    "main": "src/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.copyFilePathAndContent",
+                "title": "COPY FILE PATH AND CONTENTS",
+                "icon": {
+                    "light": "./resources/copy-icon.svg",
+                    "dark": "./resources/copy-icon.svg"
+                }
+            }
+        ],
+        "menus": {
+            "editor/title/context": [
+                {
+                    "command": "extension.copyFilePathAndContent",
+                    "group": "1_modification"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "extension.copyFilePathAndContent",
+                    "when": "resourceLangId"
+                }
+            ]
         }
-      ]
+    },
+    "scripts": {
+        "vscode:prepublish": "echo 'Prepublish script ran!'",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "eslint": "^7.22.0",
+        "glob": "^7.1.6",
+        "mocha": "^10.2.0",
+        "vscode-test": "^1.5.2"
+    },
+    "activationEvents": [
+        "onCommand:extension.copyFilePathAndContent"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tsmith165/copy_file_path_and_contents.git"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "echo 'Prepublish script ran!'",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "eslint": "^7.22.0",
-    "glob": "^7.1.6",
-    "mocha": "^10.2.0",
-    "vscode-test": "^1.5.2"
-  },
-  "activationEvents": [
-    "onCommand:extension.copyFilePathAndContent"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tsmith165/copy_file_path_and_contents.git"
-  }
 }
