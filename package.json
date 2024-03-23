@@ -2,7 +2,7 @@
     "name": "copyfilepathandcontent",
     "displayName": "CopyFilePathAndContent",
     "description": "Copy file path and content to clipboard",
-    "version": "0.0.3",
+    "version": "1.0.1",
     "publisher": "TorreySmith",
     "engines": {
         "vscode": "^1.82.0"
@@ -15,40 +15,62 @@
         "commands": [
             {
                 "command": "extension.copyFilePathAndContent",
-                "title": "COPY FILE PATH AND CONTENTS",
+                "title": "Copy File Path and Contents",
                 "icon": {
                     "light": "./resources/copy-icon.svg",
                     "dark": "./resources/copy-icon.svg"
                 }
+            },
+            {
+                "command": "extension.copyOpenTabsPathAndContent",
+                "title": "Copy OPEN Tabs Path and Content"
+            },
+            {
+                "command": "extension.copySelectedTabPathAndContent",
+                "title": "Copy SELECTED Tab Path and Content"
+            },
+            {
+                "command": "extension.copyCurrentFilePathAndContent",
+                "title": "Copy Current File Path and Content"
             }
         ],
         "menus": {
             "editor/title/context": [
                 {
-                    "command": "extension.copyFilePathAndContent",
-                    "group": "1_modification"
+                    "command": "extension.copyOpenTabsPathAndContent",
+                    "group": "copy"
+                },
+                {
+                    "command": "extension.copySelectedTabPathAndContent",
+                    "group": "copy"
                 }
             ],
             "explorer/context": [
                 {
                     "command": "extension.copyFilePathAndContent",
-                    "when": "resourceLangId"
+                    "when": "resourceLangId",
+                    "group": "copy"
                 }
             ]
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "echo 'Prepublish script ran!'",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "eslint": "^7.22.0",
-        "glob": "^7.1.6",
-        "mocha": "^10.2.0",
-        "vscode-test": "^1.5.2"
+        },
+        "keybindings": [
+            {
+                "command": "extension.copyCurrentFilePathAndContent",
+                "key": "ctrl+alt+c",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.copyOpenTabsPathAndContent",
+                "key": "ctrl+alt+a",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "activationEvents": [
-        "onCommand:extension.copyFilePathAndContent"
+        "onCommand:extension.copyFilePathAndContent",
+        "onCommand:extension.copyOpenTabsPathAndContent",
+        "onCommand:extension.copySelectedTabPathAndContent",
+        "onCommand:extension.copyCurrentFilePathAndContent"
     ],
     "repository": {
         "type": "git",
