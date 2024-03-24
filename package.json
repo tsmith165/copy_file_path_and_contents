@@ -2,7 +2,7 @@
     "name": "copyfilepathandcontent",
     "displayName": "CopyFilePathAndContent",
     "description": "Copy file path and content to clipboard",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "TorreySmith",
     "icon": "images/copy_logo.png",
     "galleryBanner": {
