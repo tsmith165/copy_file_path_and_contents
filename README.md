@@ -4,6 +4,8 @@
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/TorreySmith.copyfilepathandcontent)](https://marketplace.visualstudio.com/items?itemName=TorreySmith.copyfilepathandcontent)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/TorreySmith.copyfilepathandcontent)](https://marketplace.visualstudio.com/items?itemName=TorreySmith.copyfilepathandcontent)
 
+![Copy File Path and Contents logo](images/copy_logo.png)
+
 ## Description
 
 The "Copy File Path and Content" extension for Visual Studio Code provides a convenient way to copy the file path and its content to the clipboard. With this extension, you can easily share code snippets, file paths, or entire file contents with others, directly from your VS Code editor.
@@ -56,6 +58,20 @@ The "Copy File Path and Content" extension for Visual Studio Code provides a con
 ## Configuration
 
 This extension does not require any additional configuration. It works out of the box with the default settings.
+
+## Custom Keybindings
+
+Visual Studio Code allows you to set custom keybindings for extension commands directly within the IDE.
+To customize the keybindings for "Copy File Path and Content" commands:
+
+1. Open the Keyboard Shortcuts editor in VS Code by going to "File" > "Preferences" > "Keyboard Shortcuts"
+2. Search for the desired command by its name or by the extension name.
+3. Click on the "+" icon next to the command to add a new keybinding.
+4. Press the desired key combination for the custom keybinding.
+5. If there are any conflicts with existing keybindings, VS Code will prompt to resolve them.
+6. The custom keybinding will be added to your keybindings.json file.
+
+Feel free to customize the keybindings to suit your preferences!
 
 ## Feedback and Support
 

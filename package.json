@@ -4,6 +4,12 @@
     "description": "Copy file path and content to clipboard",
     "version": "1.0.1",
     "publisher": "TorreySmith",
+    "icon": "images/copy_logo.png",
+    "galleryBanner": {
+        "color": "#222222",
+        "theme": "dark",
+        "path": "images/copy_full.png"
+    },
     "engines": {
         "vscode": "^1.82.0"
     },
