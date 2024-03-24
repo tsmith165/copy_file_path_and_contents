@@ -4,7 +4,7 @@
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/TorreySmith.copyfilepathandcontent)](https://marketplace.visualstudio.com/items?itemName=TorreySmith.copyfilepathandcontent)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/TorreySmith.copyfilepathandcontent)](https://marketplace.visualstudio.com/items?itemName=TorreySmith.copyfilepathandcontent)
 
-![Copy File Path and Contents logo](images/copy_logo.png)
+![Copy File Path and Contents logo](images/copy_full.png)
 
 ## Description
 
