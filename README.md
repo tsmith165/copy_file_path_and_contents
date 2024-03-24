@@ -65,8 +65,8 @@ Visual Studio Code allows you to set custom keybindings for extension commands d
 To customize the keybindings for "Copy File Path and Content" commands:
 
 1. Open the Keyboard Shortcuts editor in VS Code by going to "File" > "Preferences" > "Keyboard Shortcuts"
-2. Search for the desired command by its name or by the extension name.
-3. Click on the "+" icon next to the command to add a new keybinding.
+2. Search for the desired command using: "extension.copy"
+3. Click on the "Keybinding" cell for the command you want to edit the shortcut for.
 4. Press the desired key combination for the custom keybinding.
 5. If there are any conflicts with existing keybindings, VS Code will prompt to resolve them.
 6. The custom keybinding will be added to your keybindings.json file.
