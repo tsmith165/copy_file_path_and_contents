@@ -15,9 +15,6 @@ The "Copy File Path and Content" extension for Visual Studio Code provides a con
 -   Copy the file path and content of the current file in the editor
 -   Copy the file path and content of selected files in the file explorer
 -   Copy the file path and content of all open tabs in the editor
--   Two formatting options:
-    -   Copy path and content
-    -   Copy path and content with divider
 -   Keyboard shortcuts:
     -   `ctrl+alt+c` to quickly copy the current file path and content
     -   `ctrl+alt+o` to quickly copy the file path and content of all open tabs
@@ -36,24 +33,19 @@ The "Copy File Path and Content" extension for Visual Studio Code provides a con
 
 1. Open a file in the VS Code editor
 2. Right-click on the editor title or use the `ctrl+alt+c` keyboard shortcut
-3. Select "Copy File Path and Content" from the context menu
-4. Choose the desired formatting option
-5. The file path and content will be copied to the clipboard
+3. The file path and content will be copied to the clipboard
 
-### Copy Selected Files Path and Content
+### Copy Selected File Path and Content
 
-1. In the VS Code file explorer, select one or multiple files
-2. Right-click on the selected file(s)
-3. Select "Copy File Path and Content" from the context menu
-4. Choose the desired formatting option
-5. The file path(s) and content(s) will be copied to the clipboard
+1. In the VS Code file explorer, right-click on a file
+2. Select "Copy SELECTED File Path and Content" from the context menu
+3. The file path and content of the selected file will be copied to the clipboard
 
 ### Copy Open Tabs Path and Content
 
 1. Right-click on any file tab in the editor or use the `ctrl+alt+o` keyboard shortcut
-2. Select "Copy Open Tabs Path and Content" from the context menu
-3. Choose the desired formatting option
-4. The file path(s) and content(s) of all open tabs will be copied to the clipboard
+2. Select "Copy OPEN Tabs Path and Content" from the context menu
+3. The file path and content of all open tabs will be copied to the clipboard
 
 ## Configuration
 
@@ -83,6 +75,12 @@ If you encounter any issues, have suggestions, or need assistance, please feel f
 We appreciate your feedback and are committed to improving the extension based on your input.
 
 ## Release Notes
+
+### 1.1.0
+
+-   Removed the extra window and "Copy Path / Contents w/ Divider" option for a more streamlined user experience
+-   Fixed an issue where the "Copy SELECTED File Path and Content" command was copying all open tabs instead of the selected file
+-   Updated the README with the latest changes and usage instructions
 
 ### 1.0.0
 

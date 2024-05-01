@@ -3,7 +3,7 @@ const path = require('path');
 
 function activate(context) {
     let disposable = vscode.commands.registerCommand('extension.copyFilePathAndContent', async (_, files) => {
-        await copyFilePathAndContent(files, false);
+        await copyFilePathAndContent(files);
     });
 
     context.subscriptions.push(disposable);
@@ -22,20 +22,20 @@ function activate(context) {
             }
         }
         console.log('Open Tab URIs:', openTabUris);
-        await copyFilePathAndContent(openTabUris, false);
+        await copyFilePathAndContent(openTabUris);
     });
 
     vscode.commands.registerCommand('extension.copySelectedTabPathAndContent', async (_, file) => {
         console.log('Selected File:', file);
-        await copyFilePathAndContent([file], false);
+        await copyFilePathAndContent([file]);
     });
 
     vscode.commands.registerTextEditorCommand('extension.copyCurrentFilePathAndContent', async (editor) => {
-        await copyFilePathAndContent([editor.document.uri], false);
+        await copyFilePathAndContent([editor.document.uri]);
     });
 }
 
-async function copyFilePathAndContent(files, withDivider) {
+async function copyFilePathAndContent(files) {
     if (!files || files.length === 0) {
         vscode.window.showInformationMessage('No file(s) selected.');
         return;
@@ -49,24 +49,13 @@ async function copyFilePathAndContent(files, withDivider) {
 
     const workspaceRoot = workspaceFolders[0].uri.fsPath;
 
-    const fileNames = files.map((file) => path.basename(file.fsPath)).join(', ');
-    const selectedOption = await vscode.window.showQuickPick(['Copy Path / Contents', 'Copy Path / Contents w/ Divider'], {
-        placeHolder: `Selected file(s): ${fileNames}`,
-    });
-
-    if (!selectedOption) return;
-
     const copyStrings = [];
 
     for (const [index, fileUri] of files.entries()) {
         const normalizedPath = path.relative(workspaceRoot, fileUri.fsPath).split(path.sep).join('/');
         const fileContent = (await vscode.workspace.fs.readFile(fileUri)).toString();
 
-        let copyString = `// /${normalizedPath}\n${fileContent}`;
-
-        if (withDivider || selectedOption === 'Copy Path / Contents w/ Divider') {
-            copyString = `// /${normalizedPath}\n---\n${fileContent}\n---`;
-        }
+        const copyString = `// File ${index + 1}: /${normalizedPath}\r\n\r\n${fileContent}`;
 
         copyStrings.push(copyString);
 
@@ -76,7 +65,6 @@ async function copyFilePathAndContent(files, withDivider) {
     }
 
     await vscode.env.clipboard.writeText(copyStrings.join(''));
-    vscode.window.showInformationMessage('File path(s) and content(s) copied to clipboard!');
 }
 
 function deactivate() {}

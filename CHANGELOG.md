@@ -2,8 +2,8 @@
 
 All notable changes to the "copyfilepathandcontent" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### 1.1.0
 
-## [Unreleased]
-
-- Initial release
+-   Removed the extra window and "Copy Path / Contents w/ Divider" option for a more streamlined user experience
+-   Fixed an issue where the "Copy SELECTED File Path and Content" command was copying all open tabs instead of the selected file
+-   Updated the README with the latest changes and usage instructions
